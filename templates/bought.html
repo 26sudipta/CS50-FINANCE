@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Buy Stocks
+{% endblock %}
+
+{% block main %}
+<div class=p-5>
+    {% if data %}
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+
+
+        <tr>
+            <td>{{data["symbol"]}}</td>
+            <td>{{data["price"]|usd}}</td>
+            <td>{{data["shares"]}}</td>
+            <td>{{data["total"]|usd}}</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Cash</td>
+            <td>{{data["cash"]|usd}}</td>
+        </tr>
+
+        <tr></tr>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{data["net"] | usd}}</td>
+        </tr>
+
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

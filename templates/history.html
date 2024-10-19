@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title%}
+History
+{% endblock %}
+
+{% block main %}
+<h1 class="p-5">History</h1>
+
+{% if not data|length %}
+<h1 class="py-5">You Don`t Have any Stocks.</h1>
+{% else %}
+<div>
+    <table class="table">
+        <tr>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>Current Price</th>
+        <th>Total</th>
+        <th>status</th>
+        <th>date</th>
+        </tr>
+
+        {% for d in data %}
+        <tr>
+            <td>{{d["symbol"]}}</td>
+            <td>{{d["quantity"]}}</td>
+            <td>{{d["price"]| usd}}</td>
+            <td>{{d["total"] | usd}}</td>
+            <td>{{d["status"]}}</td>
+            <td>{{d["date"]}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% endif%}
+{% endblock %}

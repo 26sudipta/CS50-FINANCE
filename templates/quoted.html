@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quote
+{% endblock%}
+
+{% block main %}
+<div class="py-5"></div>
+    {% if res %}
+    <h1>A Share of {{res["name"]}} ({{res["symbol"]}}) Costs {{res["price"]|usd}}. </h1>
+    {% endif %}
+</div>
+{% endblock %}

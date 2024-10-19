@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+{% block title %}
+Settings
+{% endblock %}
+
+{% block main %}
+<h1>Changes Your Password From Here</h1>
+<div>
+    <form action="/setting" method="post" class="container mt-5">
+        <div class="row mb-3">
+            <div class="col-md-6 mx-auto">
+                <input id="symbol" autocomplete="off" autofocus class="form-control" name="oldPass" placeholder="Old Password" type="password" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 mx-auto">
+                <input id="quantity" autocomplete="off" class="form-control" name="newPass" placeholder="New Password" type="password" min="1" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 mx-auto">
+                <input id="quantity" autocomplete="off" class="form-control" name="confirmPass" placeholder="Confirm Your New Password" type="password" min="1" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <button class="btn btn-primary btn-lg btn-block px-5" type="submit" style="transition: background-color 0.3s ease, transform 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor=''; this.style.transform='';">
+                   Change Password
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Buy Stocks
+{% endblock %}
+
+{% block main %}
+<h1>Buy Stocks</h1>
+
+<div clas="flex">
+    <form action="/buy" method="post" class="container mt-5">
+        <div class="row mb-3">
+            <div class="col-md-6 mx-auto">
+                <input id="symbol" autocomplete="off" autofocus class="form-control" name="symbol"
+                    placeholder="Stock Symbol" type="text" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6 mx-auto">
+                <input id="quantity" autocomplete="off" class="form-control" name="shares" placeholder="Quantity"
+                    type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <button class="btn btn-primary btn-lg btn-block px-5" type="submit"
+                    style="transition: background-color 0.3s ease, transform 0.3s ease;"
+                    onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.backgroundColor=''; this.style.transform='';">
+                    Buy
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+{% endblock %}
