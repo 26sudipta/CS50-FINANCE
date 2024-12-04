@@ -332,3 +332,7 @@ def sell():
     list = db.execute("select symbol from status where username=?",name[0]["username"])
     print(list)
     return render_template("/sell.html",list=list)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
